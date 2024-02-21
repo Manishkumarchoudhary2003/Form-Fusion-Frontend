@@ -185,7 +185,7 @@ const App = () => {
       ],
     },
     {
-      path: "/form/:userId/:formId",
+      path: "/form/user/:userId/form/:formId",
       element: (
         <FormLayout>
           <Form />
