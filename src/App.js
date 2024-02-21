@@ -177,11 +177,7 @@ const App = () => {
               <LogoutComponent />
             </LogoutLayout>
           ),
-        },
-        {
-          path: "*",
-          element: <ErrorPage />,
-        },
+        }
       ],
     },
     {
