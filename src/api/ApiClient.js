@@ -6,5 +6,5 @@ import axios from "axios";
 
 
 export const ApiClient = axios.create({
-    baseURL: "form-fusion-backend-production.up.railway.app",
+    baseURL: "https://form-fusion-backend-production.up.railway.app/",
 });
