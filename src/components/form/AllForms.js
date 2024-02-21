@@ -105,7 +105,6 @@ const AllForms = () => {
 
   const deleteForm = async (formId) => {
     await deleteFormForUserApiService(userId, formId, token);
-    navigate(-1)
     window.location.reload();
   };
 
