@@ -48,7 +48,7 @@ const AllQuestions = () => {
 
   const deleteQuestion = async (questionId) => {
     await deleteQuestionForFormApiService(userId, formId, questionId, token);
-    navigate("/")
+    navigate(-1)
     window.location.reload();
   };
 
