@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { retrieveAllResponsesApiService } from "../../api/ResponseApiService";
-import { Table, Spinner, Alert, Button } from "react-bootstrap";
+import { Table, Spinner, Alert } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";

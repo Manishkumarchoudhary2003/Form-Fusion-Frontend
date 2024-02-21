@@ -61,6 +61,7 @@ const AllForms = () => {
       .writeText(link)
       .then(() => {
         console.log("Link copied to clipboard:", link);
+        console.log("Link copied to clipboard:", copiedLink);
         setCopiedLink(link);
         setTimeout(() => setCopiedLink(null), 500);
       })
