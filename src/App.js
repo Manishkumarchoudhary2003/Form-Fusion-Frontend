@@ -38,8 +38,8 @@ const App = () => {
 
   function AuthenticatedRoute({ children }) {
     if (isAdmin) return children;
-    else{
-       return <ErrorPage/>
+    else {
+      return <ErrorPage />;
     }
 
     // return <Navigate to="/" />;
@@ -177,6 +177,10 @@ const App = () => {
               <LogoutComponent />
             </LogoutLayout>
           ),
+        },
+        {
+          path: "*",
+          element: <ErrorPage />,
         },
       ],
     },
