@@ -31,6 +31,10 @@ const RegisterComponent = () => {
     setEmail(event.target.value);
   };
 
+  const login = () =>{
+    navigate("/login")
+  }
+
   const handleContactChange = (event) => {
     const value = event.target.value;
     if (/^\d{0,10}$/.test(value)) {
@@ -215,14 +219,19 @@ const RegisterComponent = () => {
             </Form>
             <p>
               Already have an account?
-              <a
-                href="/login"
-                style={{ textDecoration: "none", color: "#1372c0" }}
-                onMouseEnter={(e) => (e.target.style.color = "#000000")}
-                onMouseLeave={(e) => (e.target.style.color = "#1372c0")}
-              >
-                Login here
-              </a>
+              <span
+              onClick={login}
+              style={{
+                textDecoration: "none",
+                color: "#1372c0",
+                marginLeft: "5px", // Adjust the margin as needed
+                cursor: "pointer", // Add cursor pointer to indicate it's clickable
+              }}
+              onMouseEnter={(e) => (e.target.style.color = "#000000")}
+              onMouseLeave={(e) => (e.target.style.color = "#1372c0")}
+            >
+              Login here
+            </span>
             </p>
           </Col>
         </Row>

@@ -52,7 +52,7 @@ const LoginComponent = () => {
             console.log(user.role);
             dispatch(authActions.setUserId(userId));
             localStorage.setItem("userId", userId);
-            if(user.role){
+            if (user.role) {
               localStorage.setItem("role", user.role);
               dispatch(authActions.setRole(user.role));
             }
@@ -77,6 +77,10 @@ const LoginComponent = () => {
       setError("Invalid email or password");
       console.error("Error logging in:", error);
     }
+  };
+
+  const register = () => {
+    navigate("/register");
   };
 
   return (
@@ -130,16 +134,32 @@ const LoginComponent = () => {
               Login
             </button>
           </Form>
-          <p>
+          {/* <p>
             Don't have an account?{" "}
-            <a
-              href="/register"
+            <p
+              onClick={register}
               style={{ textDecoration: "none", color: "#1372c0" }}
               onMouseEnter={(e) => (e.target.style.color = "#000000")}
               onMouseLeave={(e) => (e.target.style.color = "#1372c0")}
             >
               Register here
-            </a>
+            </p>
+          </p> */}
+          <p>
+            Don't have an account?{" "}
+            <span
+              onClick={register}
+              style={{
+                textDecoration: "none",
+                color: "#1372c0",
+                marginLeft: "5px", // Adjust the margin as needed
+                cursor: "pointer", // Add cursor pointer to indicate it's clickable
+              }}
+              onMouseEnter={(e) => (e.target.style.color = "#000000")}
+              onMouseLeave={(e) => (e.target.style.color = "#1372c0")}
+            >
+              Register here
+            </span>
           </p>
         </Col>
       </Row>
