@@ -39,7 +39,6 @@ const AllUsers = () => {
       console.error("Error deleting user:", error);
     }
     window.location.reload();
-    navigate("/");
   };
 
   return (

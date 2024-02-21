@@ -205,7 +205,6 @@ const CreateQuestion = () => {
                 Create Question
               </button>
               <button
-                type="submit"
                 onClick={display}
                 style={{
                   borderColor: "white",
@@ -235,7 +234,6 @@ const CreateQuestion = () => {
                 Generate Form Link
               </Button> */}
               <button
-                type="submit"
                 onClick={generateFormLink}
                 style={{
                   borderColor: "white",
