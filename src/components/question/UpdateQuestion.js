@@ -115,7 +115,7 @@ const UpdateQuestion = () => {
   return (
     <div>
       <div
-        className="container shadow card mt-5 md-5"
+        className="container shadow card mt-5 md-5 p-3"
         style={{ backgroundColor: "#fdffff", maxWidth: "600px" }}
       >
         <h2>Update Question</h2>

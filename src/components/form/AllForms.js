@@ -118,6 +118,54 @@ const AllForms = () => {
           <div className="col-md-6">
             <Card className="h-100 border-0 shadow">
               <div className="row no-gutters">
+                <div className="col-auto mb-3 mb-md-0 text-center">
+                  <img
+                    onClick={() => navigate(`/user/${userId}/create-form`)}
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDqb9x57UAKjssqFJK_AfxNdsBMQDsmWWj8A&usqp=CAU"
+                    alt="Create New Form"
+                    style={{
+                      width: "200px",
+                      height: "200px",
+                      cursor: "pointer",
+                      borderRadius: "10px",
+                      objectFit: "cover",
+                      border: "0.1px solid #000000",
+                      transition: "all 0.3s",
+                    }}
+                    className="rounded-left mx-auto d-block"
+                  />
+                </div>
+                <div className="col">
+                  <Card.Body className="d-flex flex-column justify-content-center align-items-center">
+                    <h1 className="text-primary">Create New Form</h1>
+                    <Card.Text
+                      className="text-center"
+                      style={{
+                        maxWidth: "500px",
+                        color: "#495057",
+                        fontSize: "1.2rem",
+                      }}
+                    >
+                      Click on the + icon to create a new form. You'll be
+                      redirected to the form creation page to design your form
+                      with fields and settings.
+                    </Card.Text>
+                  </Card.Body>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </div>
+
+      {/* <div
+        className="container-fluid mb-5"
+        style={{ marginBottom: "100px", borderRadius: "10px" }}
+      >
+        <div className="row justify-content-center">
+          <div className="col-md-6">
+            <Card className="h-100 border-0 shadow">
+              <div className="row no-gutters">
                 <div className="col-auto" style={{ marginRight: "10px" }}>
                   <img
                     onClick={() => navigate(`/user/${userId}/create-form`)}
@@ -156,7 +204,7 @@ const AllForms = () => {
             </Card>
           </div>
         </div>
-      </div>
+      </div> */}
       <hr />
 
       <div className="row align-items-center mb-5 ml-2 ">
@@ -252,7 +300,7 @@ const AllForms = () => {
                           backgroundColor: "black",
                           marginTop: "2px",
                         }}
-                      ></div>{" "} 
+                      ></div>{" "}
                       <div
                         style={{
                           width: "6px",
@@ -272,7 +320,7 @@ const AllForms = () => {
                         }}
                       ></div>
                     </Dropdown.Toggle>
-                    <Dropdown.Menu >
+                    <Dropdown.Menu>
                       <Dropdown.Item
                         style={{
                           borderColor: "white",
@@ -288,12 +336,12 @@ const AllForms = () => {
                         onMouseLeave={(e) =>
                           (e.target.style.backgroundColor = "transparent")
                         }
-                        onClick={() => seeForm(form.formId)} 
+                        onClick={() => seeForm(form.formId)}
                       >
                         View
                       </Dropdown.Item>
                       <Dropdown.Item
-                      style={{
+                        style={{
                           borderColor: "white",
                           borderRadius: "0.25rem",
                           fontSize: "0.9rem",
@@ -307,12 +355,12 @@ const AllForms = () => {
                         onMouseLeave={(e) =>
                           (e.target.style.backgroundColor = "transparent")
                         }
-                        onClick={() => updateForm(form.formId)} 
+                        onClick={() => updateForm(form.formId)}
                       >
                         Update
                       </Dropdown.Item>
                       <Dropdown.Item
-                      style={{
+                        style={{
                           borderColor: "white",
                           borderRadius: "0.25rem",
                           fontSize: "0.9rem",
@@ -326,12 +374,12 @@ const AllForms = () => {
                         onMouseLeave={(e) =>
                           (e.target.style.backgroundColor = "transparent")
                         }
-                        onClick={() => deleteForm(form.formId)} 
+                        onClick={() => deleteForm(form.formId)}
                       >
-                        Delete 
+                        Delete
                       </Dropdown.Item>
                       <Dropdown.Item
-                      style={{
+                        style={{
                           borderColor: "white",
                           borderRadius: "0.25rem",
                           fontSize: "0.9rem",
@@ -345,12 +393,12 @@ const AllForms = () => {
                         onMouseLeave={(e) =>
                           (e.target.style.backgroundColor = "transparent")
                         }
-                        onClick={() => seeResponses(form.formId)} 
+                        onClick={() => seeResponses(form.formId)}
                       >
                         Responses
                       </Dropdown.Item>
                       <Dropdown.Item
-                      style={{
+                        style={{
                           borderColor: "white",
                           borderRadius: "0.25rem",
                           fontSize: "0.9rem",
@@ -364,12 +412,12 @@ const AllForms = () => {
                         onMouseLeave={(e) =>
                           (e.target.style.backgroundColor = "transparent")
                         }
-                        onClick={() => seeSubmission(form.formId)} 
+                        onClick={() => seeSubmission(form.formId)}
                       >
                         Submissions
                       </Dropdown.Item>
                       <Dropdown.Item
-                      style={{
+                        style={{
                           borderColor: "white",
                           borderRadius: "0.25rem",
                           fontSize: "0.9rem",
@@ -383,12 +431,12 @@ const AllForms = () => {
                         onMouseLeave={(e) =>
                           (e.target.style.backgroundColor = "transparent")
                         }
-                        onClick={() => copyLinkToClipboard(form.link)} 
+                        onClick={() => copyLinkToClipboard(form.link)}
                       >
                         Copy Link
                       </Dropdown.Item>
                       <Dropdown.Item
-                      style={{
+                        style={{
                           borderColor: "white",
                           borderRadius: "0.25rem",
                           fontSize: "0.9rem",
@@ -402,14 +450,14 @@ const AllForms = () => {
                         onMouseLeave={(e) =>
                           (e.target.style.backgroundColor = "transparent")
                         }
-                        onClick={() => shareViaWhatsApp(form.link)} 
+                        onClick={() => shareViaWhatsApp(form.link)}
                       >
                         Share via WhatsApp
                       </Dropdown.Item>
                       <Dropdown.Item
-                      style={{
+                        style={{
                           borderColor: "white",
-                          borderRadius: "0.25rem", 
+                          borderRadius: "0.25rem",
                           fontSize: "0.9rem",
                           cursor: "pointer",
                           backgroundColor: "transparent",
@@ -421,7 +469,7 @@ const AllForms = () => {
                         onMouseLeave={(e) =>
                           (e.target.style.backgroundColor = "transparent")
                         }
-                        onClick={() => shareViaEmail(form.link)} 
+                        onClick={() => shareViaEmail(form.link)}
                       >
                         Share via Email
                       </Dropdown.Item>
