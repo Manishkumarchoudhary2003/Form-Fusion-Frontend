@@ -109,9 +109,9 @@ const Form = () => {
   }
 
   return (
-    <div style={{ backgroundColor: "#f6f1fa" }}>
+    <div className="p-4" style={{ backgroundColor: "#f6f1fa" }}>
       {successMessageVisible && (
-        <div className="mt-3 text-center">
+        <div className="mt-2 text-center">
           <Alert
             style={{
               backgroundColor: "#f6f1fa",
@@ -125,7 +125,7 @@ const Form = () => {
       )}
       <form
         onSubmit={handleSubmit}
-        className="container mt-1 card shadow"
+        className="container mt-2 card shadow"
         style={{
           maxWidth: "450px",
           backgroundColor: "#fdfaff",

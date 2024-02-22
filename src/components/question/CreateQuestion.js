@@ -3,7 +3,7 @@ import { createQuestionForFormApiService } from "../../api/QuestionApiService";
 import { useNavigate, useParams } from "react-router-dom";
 import AllQuestions from "./AllQuestions";
 import { setFormLinkForFormApiService } from "../../api/FormApiService";
-import { 
+import {
   Button,
   Form,
   InputGroup,
@@ -178,7 +178,10 @@ const CreateQuestion = () => {
               ))}
             </Form.Group>
             {showOptionsMessage && (
-              <Alert variant="info" className="mb-3">
+              <Alert
+                style={{ backgroundColor: "#f0d5d5" }}
+                className="text-center p-2 mb-3"
+              >
                 Options are treated as single choices.
               </Alert>
             )}
@@ -204,7 +207,7 @@ const CreateQuestion = () => {
               >
                 Create Question
               </button>
-              <button
+              <Button
                 onClick={display}
                 style={{
                   borderColor: "white",
@@ -212,18 +215,25 @@ const CreateQuestion = () => {
                   padding: "0.5rem 1rem",
                   fontSize: "1rem",
                   cursor: "pointer",
+                  color: "black",
                   backgroundColor: "transparent",
                   transition: "background-color 0.1s",
                 }}
                 onMouseEnter={(e) =>
-                  (e.target.style.backgroundColor = "#d7e9f0")
+                  (e.target.style.backgroundColor = "#def2fb")
                 }
-                onMouseLeave={(e) =>
-                  (e.target.style.backgroundColor = "transparent")
-                }
+                onMouseLeave={(e) => (e.target.style.backgroundColor = "white")}
               >
                 Show Questions
-              </button>
+              </Button>
+              {showOptionsMessage && (
+                <Alert
+                  style={{ backgroundColor: "#deecf7" }}
+                  className="text-center p-2 mb-3"
+                >
+                  To create a form, a link must be generated.
+                </Alert>
+              )}
               {/* <Button type="submit" variant="primary">
                 Create Question
               </Button>
@@ -233,7 +243,7 @@ const CreateQuestion = () => {
               {/* <Button onClick={generateFormLink} variant="secondary">
                 Generate Form Link
               </Button> */}
-              <button
+              <Button
                 onClick={generateFormLink}
                 style={{
                   borderColor: "white",
@@ -241,18 +251,17 @@ const CreateQuestion = () => {
                   padding: "0.5rem 1rem",
                   fontSize: "1rem",
                   cursor: "pointer",
+                  color: "black",
                   backgroundColor: "transparent",
                   transition: "background-color 0.1s",
                 }}
                 onMouseEnter={(e) =>
-                  (e.target.style.backgroundColor = "#dfeef3")
+                  (e.target.style.backgroundColor = "#def2fb")
                 }
-                onMouseLeave={(e) =>
-                  (e.target.style.backgroundColor = "transparent")
-                }
+                onMouseLeave={(e) => (e.target.style.backgroundColor = "white")}
               >
                 Generate Form Link
-              </button>
+              </Button>
             </div>
           </Form>
         )}

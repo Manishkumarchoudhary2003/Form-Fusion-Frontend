@@ -113,14 +113,14 @@ const UpdateQuestion = () => {
   };
 
   return (
-    <div>
+    <div className="p-5">
       <div
-        className="container shadow card mt-5 md-5 p-3"
+        className="container shadow card mt-3 md-5"
         style={{ backgroundColor: "#fdffff", maxWidth: "600px" }}
       >
         <h2>Update Question</h2>
         <form onSubmit={handleSubmit}>
-          <div className="mb-3">
+          <div className="mb-3">  
             <label htmlFor="questionText" className="form-label">
               Question Text:
             </label>
