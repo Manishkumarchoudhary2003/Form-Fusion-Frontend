@@ -105,7 +105,7 @@ const RegisterComponent = () => {
   };
   return (
     <div className="d-flex justify-content-center align-items-center vh-100">
-      <Container className="p-1">
+      <Container className="p-5">
         <Row className="justify-content-md-center">
           <Col md={6}>
             <h1 className="mb-4">Register</h1>

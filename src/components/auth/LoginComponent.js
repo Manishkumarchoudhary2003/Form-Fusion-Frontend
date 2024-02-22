@@ -67,7 +67,7 @@ const LoginComponent = () => {
             setSuccessMessage("");
             navigate("/");
             window.location.reload();
-          }, 1000);
+          }, 500);
           console.log("Login successful:", token);
         })
         .catch((error) => {
@@ -84,7 +84,7 @@ const LoginComponent = () => {
   };
 
   return (
-    <Container className="mt-5 p-1">
+    <Container className="mt-5 p-5">
       <Row className="justify-content-md-center">
         <Col md={6}>
           <h1 className="mb-4">Login</h1>
@@ -134,17 +134,7 @@ const LoginComponent = () => {
               Login
             </button>
           </Form>
-          {/* <p>
-            Don't have an account?{" "}
-            <p
-              onClick={register}
-              style={{ textDecoration: "none", color: "#1372c0" }}
-              onMouseEnter={(e) => (e.target.style.color = "#000000")}
-              onMouseLeave={(e) => (e.target.style.color = "#1372c0")}
-            >
-              Register here
-            </p>
-          </p> */}
+          
           <p>
             Don't have an account?{" "}
             <span
@@ -152,8 +142,8 @@ const LoginComponent = () => {
               style={{
                 textDecoration: "none",
                 color: "#1372c0",
-                marginLeft: "5px", // Adjust the margin as needed
-                cursor: "pointer", // Add cursor pointer to indicate it's clickable
+                marginLeft: "5px", 
+                cursor: "pointer", 
               }}
               onMouseEnter={(e) => (e.target.style.color = "#000000")}
               onMouseLeave={(e) => (e.target.style.color = "#1372c0")}
@@ -168,6 +158,9 @@ const LoginComponent = () => {
 };
 
 export default LoginComponent;
+
+
+
 
 // import { useDispatch } from "react-redux";
 // import React, { useState, useEffect } from "react";
