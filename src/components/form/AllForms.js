@@ -113,7 +113,7 @@ const AllForms = () => {
     <div className="container-fluid mb-5" style={{ marginBottom: "100px", borderRadius: "10px" }}>
   <div className="row justify-content-center">
     <div className="col-md-6">
-      <Card className="h-100 border-0 shadow">
+      <Card className="h-100 border-0 shadow justify-content-center">
         <div className="row no-gutters">
           <div className="col-auto mb-3 mb-md-0 text-center">
             <img
