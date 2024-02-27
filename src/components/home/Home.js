@@ -5,10 +5,11 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
   const userId = localStorage.getItem("userId");
   const navigate = useNavigate();
+  const isAuthenticated = localStorage.getItem("isLoggedIn") === "100";
 
-  const register = () =>{
-    navigate("/register")
-  }
+  const register = () => {
+    navigate("/register");
+  };
 
   const goToForm = () => {
     navigate(`/user/${userId}/all-forms`);
@@ -50,22 +51,24 @@ const Home = () => {
             >
               Go to Forms
             </button>
-            <p>
-              Don't have an account?{" "}
-              <span
-              onClick={register}
-              style={{
-                textDecoration: "none",
-                color: "#1372c0",
-                marginLeft: "5px", // Adjust the margin as needed
-                cursor: "pointer", // Add cursor pointer to indicate it's clickable
-              }}
-              onMouseEnter={(e) => (e.target.style.color = "#000000")}
-              onMouseLeave={(e) => (e.target.style.color = "#1372c0")}
-            >
-              Register here
-            </span>
-            </p>
+            {!isAuthenticated && (
+              <p>
+                Don't have an account?{" "}
+                <span
+                  onClick={register}
+                  style={{
+                    textDecoration: "none",
+                    color: "#1372c0",
+                    marginLeft: "5px",
+                    cursor: "pointer",
+                  }}
+                  onMouseEnter={(e) => (e.target.style.color = "#000000")}
+                  onMouseLeave={(e) => (e.target.style.color = "#1372c0")}
+                >
+                  Register here
+                </span>
+              </p>
+            )}
           </div>
         </Col>
 

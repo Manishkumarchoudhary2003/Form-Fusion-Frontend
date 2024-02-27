@@ -84,7 +84,6 @@ const Account = () => {
         <div className="col-md-4">
           {user && (
             <img
-              //   src="https://user-images.githubusercontent.com/55389276/140866485-8fb1c876-9a8f-4d6a-98dc-08c4981eaf70.gif"
               src={gif}
               alt="User"
               className="img-fluid mt-5 mb-5"
@@ -103,7 +102,7 @@ const Account = () => {
                     height="150px"
                     className="img-fluid mr-3"
                   />
-                  <div>
+                  <div style={{minWidth : "200px"}}>
                     <h1>{user.username}</h1>
                     <p style={{color : "#11485a"}}>
                       You Logged in as{" "}

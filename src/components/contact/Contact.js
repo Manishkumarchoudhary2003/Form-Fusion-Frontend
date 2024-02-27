@@ -32,7 +32,7 @@ const Contact = () => {
               {/* Form Fusion: Seamlessly merge user responses with dynamic forms for
             streamlined data collection and analysis. Simplify feedback
             processes. */}
-              <h1 style={{ color: "#1c4bab", fontSize: "2.5rem" }}>
+              <h1 style={{ color: "#1c4bab",textAlign : "center",fontSize: "2.5rem" }}>
                 I'm Manish Kumar Choudhary
               
               </h1>

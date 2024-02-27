@@ -19,6 +19,8 @@ const AllForms = () => {
   const userId = localStorage.getItem("userId");
   const navigate = useNavigate();
 
+  const isAuthenticated = localStorage.getItem("isLoggedIn") === "100";
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -121,7 +123,7 @@ const AllForms = () => {
                 {/* Column containing the image */}
                 <div className="col-md-6 mb-3 mb-md-0 d-flex justify-content-center align-items-center">
                   <img
-                    onClick={() => navigate(`/user/${userId}/create-form`)}
+                    onClick={() => isAuthenticated ? navigate(`/user/${userId}/create-form`) : navigate("/login")}
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDqb9x57UAKjssqFJK_AfxNdsBMQDsmWWj8A&usqp=CAU"
                     alt="Create New Form"
                     style={{
