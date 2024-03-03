@@ -20,7 +20,7 @@ Form Fusion Frontend is the client-side application built using React.js and Red
 - Axios for HTTP requests
 
 ## Installation
-1. Clone the repository: `git clone https://github.com/example/frontend.git`
+1. Clone the repository: `https://github.com/Manishkumarchoudhary2003/Form-Fusion-Frontend.git`
 2. Navigate to the project directory: `cd frontend`
 3. Install dependencies: `npm install`
 4. Start the application: `npm start`
