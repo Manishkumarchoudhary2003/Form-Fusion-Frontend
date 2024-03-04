@@ -56,12 +56,6 @@ const Navbar = () => {
         </button>
         {!isAuthenticated && (
           <>
-            {/* <NavLink to="/login" className="navItem">
-              Login
-            </NavLink>
-            <NavLink to="/register" className="navItem">
-              Register
-            </NavLink> */}
             <button
               onClick={() => {
                 navigate("/login");

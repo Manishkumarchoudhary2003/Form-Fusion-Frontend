@@ -154,7 +154,7 @@ const AllForms = () => {
 
       <div className="row align-items-center mb-5 ml-1 ">
         <div className="col-md-3">
-          <h2>Recent Forms</h2>
+          <h2>Recent Forms -</h2>
         </div>
         <div className="col-md-8">
           <div className="input-group">
@@ -177,7 +177,7 @@ const AllForms = () => {
           </Spinner>
         </div>
       ) : error ? (
-        <div className="container mt-5 md-5">
+        <div className="container text-center mt-5 md-5 p-2">
           <Alert variant="danger">{error}</Alert>
         </div>
       ) : !Array.isArray(formData) ? (

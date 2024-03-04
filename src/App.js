@@ -41,8 +41,6 @@ const App = () => {
     else {
       return <ErrorPage />;
     }
-
-    // return <Navigate to="/" />;
   }
 
   const router = createBrowserRouter([
@@ -177,7 +175,7 @@ const App = () => {
               <LogoutComponent />
             </LogoutLayout>
           ),
-        }
+        },
       ],
     },
     {
@@ -188,6 +186,7 @@ const App = () => {
         </FormLayout>
       ),
     },
+
     {
       path: "/contact-us",
       element: (

@@ -13,6 +13,7 @@ const AllUsers = () => {
 
   const token = localStorage.getItem("token");
   const navigate = useNavigate();
+  const currentUserId = localStorage.getItem("userId");
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -33,8 +34,12 @@ const AllUsers = () => {
 
   const deleteUser = async (userId) => {
     try {
-      await delteUserApiService(userId, token);
-      setUsers(users.filter((user) => user.userId !== userId));
+      if (currentUserId !== userId) {
+        await delteUserApiService(userId, token);
+        setUsers(users.filter((user) => user.userId !== userId));
+      } else {
+        window.alert("You can't delete yourself.");
+      }
     } catch (error) {
       console.error("Error deleting user:", error);
     }

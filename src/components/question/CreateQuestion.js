@@ -111,6 +111,47 @@ const CreateQuestion = () => {
         >
           {showForm ? "Hide Form" : "Add Question"}
         </button>
+        <Alert
+          style={{ backgroundColor: "#eef4f8" }}
+          className="text-center p-2 mt-3 mb-3"
+        >
+          To create a form, a link must be generated, and at least one question
+          must be included.
+        </Alert>
+        <button
+          onClick={generateFormLink}
+          style={{
+            borderColor: "white",
+            borderRadius: "0.25rem",
+            padding: "0.5rem 1rem",
+            fontSize: "1rem",
+            cursor: "pointer",
+            color: "black",
+            backgroundColor: "transparent",
+            transition: "background-color 0.1s",
+          }}
+          onMouseEnter={(e) => (e.target.style.backgroundColor = "#def2fb")}
+          onMouseLeave={(e) => (e.target.style.backgroundColor = "white")}
+        >
+          Generate Form Link
+        </button>
+        <button
+          onClick={display}
+          style={{
+            borderColor: "white",
+            borderRadius: "0.25rem",
+            padding: "0.5rem 1rem",
+            fontSize: "1rem",
+            cursor: "pointer",
+            color: "black",
+            backgroundColor: "transparent",
+            transition: "background-color 0.1s",
+          }}
+          onMouseEnter={(e) => (e.target.style.backgroundColor = "#def2fb")}
+          onMouseLeave={(e) => (e.target.style.backgroundColor = "white")}
+        >
+          Show Questions
+        </button>
         {showForm && (
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="questionText">
@@ -207,61 +248,6 @@ const CreateQuestion = () => {
               >
                 Create Question
               </button>
-              <Button
-                onClick={display}
-                style={{
-                  borderColor: "white",
-                  borderRadius: "0.25rem",
-                  padding: "0.5rem 1rem",
-                  fontSize: "1rem",
-                  cursor: "pointer",
-                  color: "black",
-                  backgroundColor: "transparent",
-                  transition: "background-color 0.1s",
-                }}
-                onMouseEnter={(e) =>
-                  (e.target.style.backgroundColor = "#def2fb")
-                }
-                onMouseLeave={(e) => (e.target.style.backgroundColor = "white")}
-              >
-                Show Questions
-              </Button>
-              {showOptionsMessage && (
-                <Alert
-                  style={{ backgroundColor: "#deecf7" }}
-                  className="text-center p-2 mb-3"
-                >
-                  To create a form, a link must be generated.
-                </Alert>
-              )}
-              {/* <Button type="submit" variant="primary">
-                Create Question
-              </Button>
-              <Button onClick={display} variant="secondary">
-                Show Questions
-              </Button> */}
-              {/* <Button onClick={generateFormLink} variant="secondary">
-                Generate Form Link
-              </Button> */}
-              <Button
-                onClick={generateFormLink}
-                style={{
-                  borderColor: "white",
-                  borderRadius: "0.25rem",
-                  padding: "0.5rem 1rem",
-                  fontSize: "1rem",
-                  cursor: "pointer",
-                  color: "black",
-                  backgroundColor: "transparent",
-                  transition: "background-color 0.1s",
-                }}
-                onMouseEnter={(e) =>
-                  (e.target.style.backgroundColor = "#def2fb")
-                }
-                onMouseLeave={(e) => (e.target.style.backgroundColor = "white")}
-              >
-                Generate Form Link
-              </Button>
             </div>
           </Form>
         )}

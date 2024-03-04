@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { userRegisterApiService } from "../../api/AuthApiService";
 import { useNavigate } from "react-router-dom";
 import { Form, Alert, Container, Row, Col } from "react-bootstrap";
@@ -31,9 +31,9 @@ const RegisterComponent = () => {
     setEmail(event.target.value);
   };
 
-  const login = () =>{
-    navigate("/login")
-  }
+  const login = () => {
+    navigate("/login");
+  };
 
   const handleContactChange = (event) => {
     const value = event.target.value;
@@ -64,10 +64,15 @@ const RegisterComponent = () => {
       setErrorMessage("Password must be at least 8 characters long.");
       return;
     }
-    if (!/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/.test(password)) {
-      setErrorMessage("Password must contain at least one digit, one lowercase, one uppercase, and one special character.");
+    if (!/(?=.*\W)/.test(password)) {
+      setErrorMessage("Password must contain at least one special character.");
       return;
     }
+
+    // if (!/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/.test(password)) {
+    //   setErrorMessage("Password must contain at least one digit, one lowercase, one uppercase, and one special character.");
+    //   return;
+    // }
     if (contact.length !== 10) {
       setErrorMessage("Contact number must be 10 digits long.");
       return;
@@ -99,6 +104,10 @@ const RegisterComponent = () => {
       }
     }
   };
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -220,18 +229,18 @@ const RegisterComponent = () => {
             <p>
               Already have an account?
               <span
-              onClick={login}
-              style={{
-                textDecoration: "none",
-                color: "#1372c0",
-                marginLeft: "5px", // Adjust the margin as needed
-                cursor: "pointer", // Add cursor pointer to indicate it's clickable
-              }}
-              onMouseEnter={(e) => (e.target.style.color = "#000000")}
-              onMouseLeave={(e) => (e.target.style.color = "#1372c0")}
-            >
-              Login here
-            </span>
+                onClick={login}
+                style={{
+                  textDecoration: "none",
+                  color: "#1372c0",
+                  marginLeft: "5px", 
+                  cursor: "pointer", 
+                }}
+                onMouseEnter={(e) => (e.target.style.color = "#000000")}
+                onMouseLeave={(e) => (e.target.style.color = "#1372c0")}
+              >
+                Login here
+              </span>
             </p>
           </Col>
         </Row>
@@ -241,11 +250,6 @@ const RegisterComponent = () => {
 };
 
 export default RegisterComponent;
-
-
-
-
-
 
 
 // import React, { useState } from "react";

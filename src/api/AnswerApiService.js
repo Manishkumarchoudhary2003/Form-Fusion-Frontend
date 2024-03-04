@@ -25,7 +25,7 @@ export const retrieveAnswersForQuestionForFormApiService = (
   formId,
   questionId
 ) => {
-  return ApiClient.post(`/answer/${userId}/${formId}/${questionId}/get-answers`)
+  return ApiClient.get(`/answer/${userId}/${formId}/${questionId}/get-answers`)
     .then((response) => {
       console.log("Answer successfully fetched", response.data);
       return response.data;
