@@ -32,6 +32,8 @@ import AllUsers from "./components/user/AllUsers";
 import AllUsersLayout from "./pages/AllUsersLayout";
 import UserAccount from "./components/user/UserAccount";
 import UserAccountLayout from "./pages/UserAccountLayout";
+import OTPVerificationForm from "./components/auth/OTPVerificationForm";
+import OTPVerificationFormLayout from "./pages/OTPVerificationFormLayout";
 
 const App = () => {
   const isAdmin = localStorage.getItem("role") === "ADMIN_ROLES";
@@ -157,6 +159,14 @@ const App = () => {
             <RegisterLayout>
               <RegisterComponent />
             </RegisterLayout>
+          ),
+        },
+        {
+          path: "verification/:email",
+          element: (
+            <OTPVerificationFormLayout>
+              <OTPVerificationForm />
+            </OTPVerificationFormLayout>
           ),
         },
         {
