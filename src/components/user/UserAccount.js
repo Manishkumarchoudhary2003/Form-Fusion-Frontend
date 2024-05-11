@@ -34,7 +34,7 @@ const UserAccount = () => {
           userId,
           token
         );
-        console.log("fetchedFormData: -> ", fetchedFormData);
+        // console.log("fetchedFormData: -> ", fetchedFormData);
         const formattedData = fetchedFormData.map((form) => ({
           ...form,
           link: form.link === "null" ? null : form.link,

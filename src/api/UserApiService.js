@@ -9,11 +9,11 @@ export const retrieveAllUsersApiService = (token) => {
     },
   })
     .then((response) => {
-      console.log("Get Users Data--->>>", response.data);
+      // console.log("Get Users Data--->>>", response.data);
       return response.data; 
     })
     .catch((error) => {
-      console.log("Get an Error--->>>", error);
+      // console.log("Get an Error--->>>", error);
       throw error;
     });
 };
@@ -26,11 +26,11 @@ export const retrieveUserApiService = (userId,token) => {
     },
   })
     .then((response) => {
-      console.log("Get User Data--->>>", response.data);
+      // console.log("Get User Data--->>>", response.data);
       return response.data; 
     })
     .catch((error) => {
-      console.log("Get an Error--->>>", error);
+      // console.log("Get an Error--->>>", error);
       throw error;
     });
 };
@@ -42,11 +42,11 @@ export const delteUserApiService = (userId,token) => {
     },
   })
     .then((response) => {
-      console.log("Delete User Data--->>>", response.data);
+      // console.log("Delete User Data--->>>", response.data);
       return response.data; 
     })
     .catch((error) => {
-      console.log("Delete an Error--->>>", error);
+      // console.log("Delete an Error--->>>", error);
       throw error;
     });
 };
@@ -58,11 +58,11 @@ export const retrieveUserByEmailApiService = (email, token) => {
     },
   })
     .then((response) => {
-      console.log("Get User by Email Data--->>>", response.data);
+      // console.log("Get User by Email Data--->>>", response.data);
       return response.data; 
     })
     .catch((error) => {
-      console.log("Get an Error--->>>", error);
+      // console.log("Get an Error--->>>", error);
       throw error;
     });
 };

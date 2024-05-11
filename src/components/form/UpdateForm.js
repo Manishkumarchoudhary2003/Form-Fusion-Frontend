@@ -37,23 +37,23 @@ const UpdateForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     try {
-      console.log(
-        "user id -> ",
-        userId,
-        " token -> ",
-        token,
-        " form id -> ",
-        formId
-      );
+      // console.log(
+      //   "user id -> ",
+      //   userId,
+      //   " token -> ",
+      //   token,
+      //   " form id -> ",
+      //   formId
+      // );
       updateFormForUserApiService(userId, formId, token, form);
-      console.log(
-        "user id -> ",
-        userId,
-        " token -> ",
-        token,
-        " form id -> ",
-        formId
-      );
+      // console.log(
+      //   "user id -> ",
+      //   userId,
+      //   " token -> ",
+      //   token,
+      //   " form id -> ",
+      //   formId
+      // );
       navigate("/all-forms");
     } catch (error) {
       setError(error.message || "An error occurred while updating form");

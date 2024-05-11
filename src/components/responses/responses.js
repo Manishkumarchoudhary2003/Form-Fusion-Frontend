@@ -69,7 +69,7 @@ const Responses = () => {
           }))
         );
       } catch (error) {
-        console.error("Error fetching questions:", error);
+        // console.error("Error fetching questions:", error);
         setError("An error occurred while fetching responses");
       }
     };

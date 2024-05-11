@@ -25,8 +25,8 @@ const UpdateQuestion = () => {
           questionId,
           token
         );
-        console.log(response.text);
-        console.log(response.options);
+        // console.log(response.text);
+        // console.log(response.options);
         setQuestionText(response.text);
         // setOptions(response.optionData.map(option => option.optionData));
         if (Array.isArray(response.options)) {
@@ -70,7 +70,7 @@ const UpdateQuestion = () => {
       //   navigate(`/all-questions/${formId}`);
       navigate(-1);
     } catch (error) {
-      console.error("Error creating/updating question:", error);
+      // console.error("Error creating/updating question:", error);
     }
   };
 

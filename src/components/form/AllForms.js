@@ -29,7 +29,7 @@ const AllForms = () => {
         }
 
         const response = await retrieveAllFormsForUserApiService(userId, token);
-        console.log("Response: -> ", response);
+        // console.log("Response: -> ", response);
         const formattedData = response.map((form) => ({
           ...form,
           link: form.link === "null" ? null : form.link,
@@ -39,7 +39,7 @@ const AllForms = () => {
         setLoading(false);
         await deleteFormsForUserHasNoLinkApiService(userId, token);
       } catch (error) {
-        console.error("Error fetching form data: ->", error);
+        // console.error("Error fetching form data: ->", error);
         setError(error.message || "An error occurred while fetching form data");
         setLoading(false);
       }
@@ -62,7 +62,7 @@ const AllForms = () => {
     navigator.clipboard
       .writeText(link)
       .then(() => {
-        console.log("Link copied to clipboard:", link);
+        // console.log("Link copied to clipboard:", link);
         console.log("Link copied to clipboard:", copiedLink);
         setCopiedLink(link);
         setTimeout(() => setCopiedLink(null), 500);

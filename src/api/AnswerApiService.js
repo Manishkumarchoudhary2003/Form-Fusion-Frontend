@@ -11,11 +11,11 @@ export const submitAnswerForQuestionForFormApiService = (
     answer
   )
     .then((response) => {
-      console.log("Answer successfully submitted", response.data);
+      // console.log("Answer successfully submitted", response.data);
       return response.data;
     })
     .catch((error) => {
-      console.log("Answer Error--->>>", error);
+      // console.log("Answer Error--->>>", error);
       throw error;
     });
 };
@@ -27,11 +27,11 @@ export const retrieveAnswersForQuestionForFormApiService = (
 ) => {
   return ApiClient.get(`/answer/${userId}/${formId}/${questionId}/get-answers`)
     .then((response) => {
-      console.log("Answer successfully fetched", response.data);
+      // console.log("Answer successfully fetched", response.data);
       return response.data;
     })
     .catch((error) => {
-      console.log("Answer fetching Error--->>>", error);
+      // console.log("Answer fetching Error--->>>", error);
       throw error;
     });
 };

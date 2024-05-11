@@ -16,11 +16,11 @@ export const createQuestionForFormApiService = (
     }
   )
     .then((response) => {
-      console.log("Question successfully created", response.data);
+      // console.log("Question successfully created", response.data);
       return response.data;
     })
     .catch((error) => {
-      console.log("Question Error--->>>", error);
+      // console.log("Question Error--->>>", error);
       throw error;
     });
 };

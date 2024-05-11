@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { retrieveAllQuestionsForFormApiService } from "../../api/QuestionApiService";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { responseForFormApiService } from "../../api/ResponseApiService";
 import { submitAnswerForQuestionForFormApiService } from "../../api/AnswerApiService";
 import { retrieveFormForUserApiService } from "../../api/FormApiService";
@@ -15,7 +15,7 @@ const Form = () => {
   const [successMessageVisible, setSuccessMessageVisible] = useState(false);
 
   const { userId, formId } = useParams();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -72,11 +72,11 @@ const Form = () => {
         await responseForFormApiService(userId, formId);
         setSuccessMessageVisible(true);
         setTimeout(() => {
-          setSuccessMessageVisible(false);
-          navigate(-1);
+          // setSuccessMessageVisible(false);
+          // navigate(-1);
         }, 1000);
       } catch (error) {
-        console.error("Error submitting form:", error);
+        // console.error("Error submitting form:", error);
         setError("An error occurred while submitting the form");
       }
     }
@@ -111,21 +111,36 @@ const Form = () => {
   return (
     <div className="p-4" style={{ backgroundColor: "#f6f1fa" }}>
       {successMessageVisible && (
-        <div className="mt-2 text-center">
-          <Alert
-            style={{
-              backgroundColor: "#f6f1fa",
-              border: "none",
-              fontSize: "1.2rem",
-            }}
-          >
-            Form submitted successfully!
-          </Alert>
+        <div
+          className="d-flex justify-content-center"
+          style={{ 
+            backgroundColor: "white",  
+          }}
+        >
+          <div className="mt-2">
+            <h2>{form.title}</h2>
+            <p
+              style={{
+                fontSize: "1.2rem",
+              }}
+            >
+              Your response has been recorded!
+            </p>
+            <p
+              onClick={() => window.location.reload()}
+              style={{ textDecoration: "underline", cursor: "pointer" }}
+            >
+              Submit another response
+            </p>
+          </div>
         </div>
       )}
+
       <form
         onSubmit={handleSubmit}
-        className="container mt-2 card shadow"
+        className={`container mt-2 card shadow ${
+          successMessageVisible ? "d-none" : ""
+        }`}
         style={{
           maxWidth: "450px",
           backgroundColor: "#fdfaff",
@@ -146,7 +161,11 @@ const Form = () => {
           <div key={question.questionId} className="mb-3">
             <p
               className="mb-3"
-              style={{ color: "#7D91D8", fontSize: "18px", fontWeight: "bold" }}
+              style={{
+                color: "#7D91D8",
+                fontSize: "18px",
+                fontWeight: "bold",
+              }}
             >{`${index + 1}. ${question.text}`}</p>
             <div className="mb-3">
               {question.options.length === 0 ? (

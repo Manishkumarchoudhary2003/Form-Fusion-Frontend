@@ -33,7 +33,7 @@ const Account = () => {
           userId,
           token
         );
-        console.log("fetchedFormData: -> ", fetchedFormData);
+        // console.log("fetchedFormData: -> ", fetchedFormData);
         const formattedData = fetchedFormData.map((form) => ({
           ...form,
           link: form.link === "null" ? null : form.link,
@@ -103,7 +103,7 @@ const Account = () => {
                     className="img-fluid mr-3"
                   />
                   <div style={{minWidth : "200px"}}>
-                    <h1>{user.username}</h1>
+                    <h2>{user.username}</h2>
                     <p style={{color : "#11485a"}}>
                       You Logged in as{" "}
                       {role === "USER_ROLES" ? "User" : "Admin"}

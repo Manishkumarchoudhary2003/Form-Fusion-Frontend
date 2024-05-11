@@ -22,7 +22,7 @@ const AllUsers = () => {
         setUsers(response.reverse());
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching user data:", error);
+        // console.error("Error fetching user data:", error);
         setError("Error fetching user data");
         setLoading(false);
       }
@@ -87,7 +87,7 @@ const AllUsers = () => {
                           display: "flex",
                           flexDirection: "column",
                           borderRadius: "50%",
-                          alignItems: "center", // Align items vertically
+                          alignItems: "center",
                         }}
                       >
                         {" "}
@@ -182,73 +182,3 @@ const AllUsers = () => {
 };
 
 export default AllUsers;
-
-// import React, { useState, useEffect } from "react";
-// import { retrieveAllUsersApiService } from "../../api/UserApiService";
-// import { Card, Alert, Spinner } from "react-bootstrap";
-// import { useNavigate } from "react-router-dom";
-
-// const AllUsers = () => {
-//   const [users, setUsers] = useState([]);
-//   const [error, setError] = useState(null);
-//   const [loading, setLoading] = useState(true);
-
-//   const token = localStorage.getItem("token");
-//   const navigate = useNavigate();
-
-//   useEffect(() => {
-//     const fetchUsers = async () => {
-//       try {
-//         const response = await retrieveAllUsersApiService(token);
-//         setUsers(response);
-//         setLoading(false);
-//       } catch (error) {
-//         console.error("Error fetching user data:", error);
-//         setError("Error fetching user data");
-//         setLoading(false);
-//       }
-//     };
-
-//     fetchUsers();
-//     window.scrollTo({ top: 0, behavior: "smooth" });
-//   }, [token]);
-
-//   return (
-//     <div className="container shadow p-4" style={{maxWidth : "1000px"}}>
-//       {error && <Alert variant="danger">Error: {error}</Alert>}
-//       {loading ? (
-//         <div className="text-center">
-//           <Spinner animation="border" role="status">
-//             <span className="visually-hidden">Loading...</span>
-//           </Spinner>
-//         </div>
-//       ) : (
-//         <div className="row">
-//           {users.map((user, index) => (
-//             <div key={index} className="col-lg-4 mb-4">
-//               <Card onClick={() => {navigate(`/users/all-users-details/${user.userId}`)}} style={{cursor : "pointer"}}>
-//                 <Card.Body>
-//                   <Card.Title>{user.username}</Card.Title>
-//                   <Card.Text>
-//                     <strong>Email:</strong> {user.email}
-//                   </Card.Text>
-//                   <Card.Text>
-//                     <strong>Role:</strong> {user.role}
-//                   </Card.Text>
-//                   <Card.Text>
-//                     <strong>Contact:</strong> {user.contact}
-//                   </Card.Text>
-//                   <Card.Text>
-//                     <strong>Country:</strong> {user.country}
-//                   </Card.Text>
-//                 </Card.Body>
-//               </Card>
-//             </div>
-//           ))}
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default AllUsers;

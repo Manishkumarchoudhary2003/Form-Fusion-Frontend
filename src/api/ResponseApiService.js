@@ -16,11 +16,11 @@ export const responseForFormApiService = async (userId, formId) => {
       },
     })
       .then((response) => {
-        console.log("Get Responses Data--->>>", response.data);
+        // console.log("Get Responses Data--->>>", response.data);
         return response.data; 
       })
       .catch((error) => {
-        console.log("Get an Error Responses--->>>", error);
+        // console.log("Get an Error Responses--->>>", error);
         throw error;
       });
   };
